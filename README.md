@@ -12,7 +12,8 @@
 
 执行：
 
-  $ python time_process_day.py -i ./time_list/20200411-林林小公主的时间记录清单.csv -o ./20200411-result/
+
+  	$ python time_process_day.py -i ./time_list/20200411-林林小公主的时间记录清单.csv -o ./20200411-result/
 
 
 说明 -i 后面接存放时间清单的全路径，./的意思是当前文件夹下，大家可以用tab键进行补全。
@@ -25,7 +26,9 @@
 在mac电脑下打开terminal，在windows电脑下打开anaconda promt，进入到存储python脚本的地方。
 
 执行：
-  $ python time_process_week.py -d ./time_list/20200411_week_list/ -o ./20200411_week/
+
+
+  	$ python time_process_week.py -d ./time_list/20200411_week_list/ -o ./20200411_week/
 
 说明 -i 后面接存放时间清单文件夹全路径，./的意思是当前文件夹下，大家可以用tab键进行补全。
 
