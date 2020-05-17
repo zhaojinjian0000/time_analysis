@@ -1,4 +1,5 @@
-# time_analysis
+# 林林的时间分析
+
 其实大多数人对自己的一天都没有一个清醒的认知，完美的一天是什么样？  ins风的早餐，晨起跑步，日间高效的工作时间，下班后朋友的聚会，上新的电影，面膜与氤氲的泡澡时间，最好要有一杯红酒……  
 
 
@@ -7,7 +8,7 @@
 
 林林的完整的时间管理路线包括规划时间（时间日志），记录追踪（toggl），进入到心流模式（Forest），时间记录汇总分析（时间清单+林林的python小程序），这里存放的是林林的python小程序哦~~❤
 
-# time_process_day.py
+## time_process_day.py
 在mac电脑下打开terminal，在windows电脑下打开anaconda promt，进入到存储python脚本的地方。
 
 执行：
@@ -22,7 +23,7 @@
 
 运行完了之后大家会在文件夹下发现一个名字为 20200411-result的文件夹里面可以得到对应的3张时间分析图
 
-# time_process_week.py
+## time_process_week.py
 在mac电脑下打开terminal，在windows电脑下打开anaconda promt，进入到存储python脚本的地方。
 
 执行：
