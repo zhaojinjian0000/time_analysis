@@ -51,16 +51,18 @@ if __name__ == '__main__':
         check_path(args.output_dir)
 
         input_df = pd.read_csv(args.input_fn)
-        index = ['任务编号', '任务', 'start', 'end', '效能', '时间矩阵', ]
+        index = ['任务', 'start', 'end', '效能', '时间矩阵', ]
         input_df = input_df[index]
         input_df.dropna(inplace=True)
 
         input_df = generate_duration(input_fn=args.input_fn,
                                      input_df=input_df)
+        # print(input_df)
         # input_df.to_csv(args.input_fn, index=False)
 
 
         s = get_efficient_ratio(input_df)
+        # print(s)
         plt.figure()
         plt.title(in_date + ' efficience pie chart')
         plt.axis('equal')  # 保证长宽相等
@@ -72,6 +74,7 @@ if __name__ == '__main__':
         print(args.output_dir+input_sg + '-efficience_pie_chart.png has been saved......')
 
         m = get_timematrix_ratio(input_df)
+        # print(m)
         plt.figure()
         plt.title(in_date + ' time matrix pie chart')
         plt.axis('equal')  # 保证长宽相等
