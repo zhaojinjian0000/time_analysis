@@ -60,6 +60,7 @@ def get_efficient_ratio(timelist_df):
     high = np.sum(timelist_df.query('效能=="高"')['duration'])
     middle = np.sum(timelist_df.query('效能=="中"')['duration'])
     low = np.sum(timelist_df.query('效能=="低"')['duration'])
+    # print(high,middle,low)
     result = pd.Series([high, middle, low], index=efficient_index,
                   )
     return result

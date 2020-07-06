@@ -109,7 +109,11 @@ if __name__ == '__main__':
         plt.figure()
         plt.title(input_sg + '_week_time_matrix_pie_chart')
         plt.axis('equal')  # 保证长宽相等
-        plt.pie(table_3['total'],
+        plt.pie([np.sum(table_3['S']),
+                 np.sum(table_3['A']),
+                 np.sum(table_3['B']),
+                 np.sum(table_3['C']),
+                 np.sum(table_3['R'])],
                 labels=['S', 'A', 'B', 'C', 'R'],
                 shadow=True,
                 autopct='%1.2f%%', )
@@ -147,7 +151,7 @@ if __name__ == '__main__':
         plt.savefig(args.output_dir + input_sg + '_time_matrix_hist_plot.png')
         print(args.output_dir + input_sg + '_time_matrix_hist_plot.png has been saved......')
 
-        # shutil.rmtree(args.temp_dir)
+        shutil.rmtree(args.temp_dir)
     except Exception as e:
         print(e)
 
