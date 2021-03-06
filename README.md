@@ -1,42 +1,32 @@
-# 林林的时间分析
+# 时间分析 for Windows 
+forked from LotusWang0723/time_analysis
+https://github.com/LotusWang0723/time_analysis
 
-其实大多数人对自己的一天都没有一个清醒的认知，完美的一天是什么样？  ins风的早餐，晨起跑步，日间高效的工作时间，下班后朋友的聚会，上新的电影，面膜与氤氲的泡澡时间，最好要有一杯红酒……  
+## 功能
+- 原始的时间统计功能只保留按天统计
+- 新增了更换为桌面壁纸功能
 
+## 安装
+- 安装python
+- 下载该项目并解压，进入到解压文件夹
+- 双击debug.bat，按照提示安装未安装的python包，直到可以正确更换桌面壁纸
+- 在debug.bat运行无误后，双击change_wallpaper.bat即可在后台运行，至此安装完毕
+---
+## 入门使用指南
+###### 如何修改内容
+- 如何修改某一天的时间表：修改csvs/20210305-zjj.csv，修改后运行change_wallpaper.bat
 
-明白时间管理的意义就是在于深刻的洞察到了这样完美的一天需要远超过72h，或许我能帮助你认识到所谓不差的一天，还行的一周，挺好的一年，以及完美的一生……    文艺的部分过去了，我们开始干货。
+---
+## 进阶使用指南
+###### 如何修改内容
+- 如何修改壁纸左下方文字：在wallpaper_text.txt中修改，修改后运行change_wallpaper.bat
+- 如何修改壁纸左下方文字大小：右键change_wallpaper.bat编辑，在"set  fontsize=40"一行，修改40为想要的值，修改后运行change_wallpaper.bat（注：修改change_wallpaper.bat内的某个值/文本后，需要数值/文本前后都不能留空格）
+- 如何修改壁纸背景：修改wallpaper.jpg，修改后运行change_wallpaper.bat（图片大小变化后，可能导致左下方文字大小异常，按上述修改）
+- 如何修改某一天的时间表：修改csvs/20210305-zjj.csv，修改后运行change_wallpaper.bat
+- 如何新增一天的时间表：在csvs文件夹内新建"日期-项目名称.csv"，右键change_wallpaper.bat编辑，在"set  name=20210305-zjj"一行，修改20210305-zjj为想要的"日期-项目名称.csv",修改后运行change_wallpaper.bat（注：修改change_wallpaper.bat内的某个值/文本后，需要数值/文本前后都不能留空格）
 
-
-林林的完整的时间管理路线包括规划时间（时间日志），记录追踪（toggl），进入到心流模式（Forest），时间记录汇总分析（时间清单+林林的python小程序），这里存放的是林林的python小程序哦~~❤
-
-## time_process_day.py
-在mac电脑下打开terminal，在windows电脑下打开anaconda promt，进入到存储python脚本的地方。
-
-执行：
-
-
-  	$ python time_process_day.py -i ./time_list/20200411-林林小公主的时间记录清单.csv -o ./20200411-result/
-
-
-说明 -i 后面接存放时间清单的全路径，./的意思是当前文件夹下，大家可以用tab键进行补全。
-
--o 后面为产生的分析结果图片存放的文件夹，大家可以自己设置一下。
-
-运行完了之后大家会在文件夹下发现一个名字为 20200411-result的文件夹里面可以得到对应的3张时间分析图
-
-## time_process_week.py
-在mac电脑下打开terminal，在windows电脑下打开anaconda promt，进入到存储python脚本的地方。
-
-执行：
-
-
-  	$ python time_process_week.py -d ./time_list/20200411_week_list/ -o ./20200411_week/
-
-说明 -i 后面接存放时间清单文件夹全路径，./的意思是当前文件夹下，大家可以用tab键进行补全。
-
--o 后面为产生的分析结果图片存放的文件夹，大家可以自己设置一下。
-
-运行完了之后大家会在文件夹下发现一个名字为 20200411_week的文件夹，文件夹下有4张时间分析的图。
-
-关于更多的时间管理的流程，请参考我的公众号推送：
-
-比心心~~
+###### 如何更简便
+- 快捷更换：新建change_wallpaper.bat的快捷方式，并把他放在桌面
+- 自动更换：[使用windows的任务计划程序](https://blog.csdn.net/weixin_42046939/article/details/103886833)
+开始任务自行设置，可以设置为开机自启/每隔30分钟运行一次
+程序或脚本为change_wallpaper.bat的路径，起始于change_wallpaper.bat所在的文件夹

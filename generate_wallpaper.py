@@ -12,12 +12,13 @@ if __name__=="__main__":
     parser.add_argument('--wallpaper', type=str,default=r"wallpaper.jpg", help='input wallpaper picture path')
     parser.add_argument('--chartpng', type=str,required=True, nargs=3,help='input hart pictures paths')
     parser.add_argument('--output', type=str,default=r"wallpaper_new.jpg", help='output wallpaper picture path')
+    parser.add_argument('--font', type=int,default=20, help='font size')
     args = parser.parse_args()
     img = Image.open(args.wallpaper)
     
     try:
         with open("wallpaper_text.txt",'r',encoding='utf-8')as f:
-            img = image_write_text(img, f.read(), img.size[0]//15,img.size[1]*4//6,(28,128,179),60)
+            img = image_write_text(img, f.read(), img.size[0]//15,img.size[1]*4//6,(28,128,179),args.font)
     except Exception as e:
         import traceback
         traceback.print_exc()
