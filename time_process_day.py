@@ -1,3 +1,5 @@
+
+
 # -*- coding: utf-8 -*-
 """
  @File: timelist_processing - time_process
@@ -50,7 +52,7 @@ if __name__ == '__main__':
         check_path(args.temp_dir)
         check_path(args.output_dir)
 
-        input_df = pd.read_csv(args.input_fn)
+        input_df = pd_read_csv(args.input_fn)
         index = ['任务', 'start', 'end', '效能', '时间矩阵', ]
         input_df = input_df[index]
         input_df.dropna(inplace=True)
@@ -66,10 +68,15 @@ if __name__ == '__main__':
         plt.figure()
         plt.title(in_date + ' efficience pie chart')
         plt.axis('equal')  # 保证长宽相等
-        plt.pie(s, explode=[0.1, 0, 0],
+        #zjj
+        patches,l_text,p_text  = plt.pie(s, explode=[0.1, 0, 0],
                 labels=s.index,
                 shadow=True,
                 autopct='%1.2f%%', )
+        for t in l_text:
+            t.set_size(26)
+        for t in p_text:
+            t.set_size(1)
         plt.savefig(args.output_dir+input_sg + '-efficience_pie_chart.png')
         print(args.output_dir+input_sg + '-efficience_pie_chart.png has been saved......')
 
@@ -78,10 +85,15 @@ if __name__ == '__main__':
         plt.figure()
         plt.title(in_date + ' time matrix pie chart')
         plt.axis('equal')  # 保证长宽相等
-        plt.pie(m,
+        #zjj
+        patches,l_text,p_text = plt.pie(m,
                 labels=m.index,
                 shadow=True,
                 autopct='%1.2f%%', )
+        for t in l_text:
+            t.set_size(26)
+        for t in p_text:
+            t.set_size(1)
         plt.savefig(args.output_dir+input_sg + '-time_matrix_pie_chart.png')
         print(args.output_dir+input_sg + '-time_matrix_pie_chart.png has been saved......')
 
@@ -107,7 +119,9 @@ if __name__ == '__main__':
         print(args.output_dir+input_sg + '-energy_trend.png has been saved......')
         shutil.rmtree(args.temp_dir)
     except Exception as e:
-        print(e)
+        import traceback
+        traceback.print_exc()
+        #zjj
 
 
 

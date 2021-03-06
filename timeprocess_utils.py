@@ -15,7 +15,10 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 import csv
-
+#zjj
+def pd_read_csv(*args,**kwargs):
+    kwargs['encoding']='ansi' # 'ansi' for windows ; 'utf-8' for mac. zjj
+    return pd.read_csv(*args,**kwargs)
 def check_path(my_path):
     my_file = Path(str(my_path))
     my_path=str(my_path)
@@ -63,6 +66,7 @@ def get_efficient_ratio(timelist_df):
     # print(high,middle,low)
     result = pd.Series([high, middle, low], index=efficient_index,
                   )
+
     return result
 
 
@@ -232,7 +236,7 @@ def write_table_1(input_dir, tmp_dir ):
             # print(input_fn)
             input_fn = input_dir + input_fn
             in_date = input_fn.split('/')[-1][:8]
-            input_df = pd.read_csv(input_fn)
+            input_df = pd_read_csv(input_fn)
             index = ['任务编号', '任务', 'start', 'end', '效能', '时间矩阵', ]
             input_df = input_df[index]
             input_df.dropna(inplace=True)
@@ -257,7 +261,7 @@ def write_table3(input_dir, tmp_dir):
             # print(input_fn)
             input_fn = input_dir + input_fn
             in_date = input_fn.split('/')[-1][:8]
-            input_df = pd.read_csv(input_fn)
+            input_df = pd_read_csv(input_fn)
             index = ['任务编号', '任务', 'start', 'end', '效能', '时间矩阵', ]
             input_df = input_df[index]
             input_df.dropna(inplace=True)
