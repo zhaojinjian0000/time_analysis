@@ -1,11 +1,12 @@
 # 时间分析 for Windows 
+
 forked from LotusWang0723/time_analysis
 https://github.com/LotusWang0723/time_analysis
 
 ## 功能
 - 原始的时间统计功能只保留按天统计
 - 新增了更换为桌面壁纸功能
-
+![image](https://github.com/zhaojinjian0000/time_analysis/blob/master/wallpaper_new.jpg)
 ## 安装
 - 安装python
 - 下载该项目并解压，进入到解压文件夹
