@@ -20,8 +20,10 @@ import numpy as np
 import pandas as pd
 from timeprocess_utils import *
 import matplotlib.pyplot as plt
-
-
+# plt.style.use('seaborn-dark-palette')
+def plt_savefig(*args,**kwargs):
+    kwargs['transparent']=True
+    return plt.savefig(*args,**kwargs)
 def get_args():
     optParser = OptionParser(usage="%prog [-i] [-o]", version="%prog 1.0",
                              description="A time processing tools for IDP learning")
@@ -77,7 +79,7 @@ if __name__ == '__main__':
             t.set_size(26)
         for t in p_text:
             t.set_size(1)
-        plt.savefig(args.output_dir+input_sg + '-efficience_pie_chart.png')
+        plt_savefig(args.output_dir+input_sg + '-efficience_pie_chart.png')
         print(args.output_dir+input_sg + '-efficience_pie_chart.png has been saved......')
 
         m = get_timematrix_ratio(input_df)
@@ -94,7 +96,7 @@ if __name__ == '__main__':
             t.set_size(26)
         for t in p_text:
             t.set_size(1)
-        plt.savefig(args.output_dir+input_sg + '-time_matrix_pie_chart.png')
+        plt_savefig(args.output_dir+input_sg + '-time_matrix_pie_chart.png')
         print(args.output_dir+input_sg + '-time_matrix_pie_chart.png has been saved......')
 
         tag_df = handle_input_df(input_df)
@@ -103,19 +105,21 @@ if __name__ == '__main__':
         x = np.arange(6, 25, 1)  # x坐标
         plt.figure(figsize=(10, 6))
         plt.title(in_date + ' energy trend', fontsize=20)
+        
         plt.plot(x, np.array(time_div_list),
-                 lw=3, c='lightblue',
+                 c='coral',
                  marker='o',
                  ms=4,
-                 label='Y1')  # 绘制y1
+                 label='Y1',linewidth=6)  # 绘制y1
         plt.xticks(x)  # x轴的刻度
         plt.grid()
         plt.xlim(6, 24)  # x轴坐标范围
         plt.ylim(0, 110)  # y轴坐标范围
-        plt.xlabel('time')  # x轴标注
-        plt.ylabel('energy')  # y轴标注
+        plt.xlabel('time',fontdict={'weight':'normal','size': 25})  # x轴标注
+        plt.ylabel('energy',fontdict={'weight':'normal','size': 25})  # y轴标注
+        plt.tick_params(labelsize=18)
         # plt.legend()  # 图例
-        plt.savefig(args.output_dir+input_sg + '-energy_trend.png')  # 保存图片
+        plt_savefig(args.output_dir+input_sg + '-energy_trend.png')  # 保存图片
         print(args.output_dir+input_sg + '-energy_trend.png has been saved......')
         shutil.rmtree(args.temp_dir)
     except Exception as e:

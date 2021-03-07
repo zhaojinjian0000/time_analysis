@@ -13,7 +13,7 @@ def setWallPaper(pic):
 """
 if __name__=="__main__":
     parser = argparse.ArgumentParser(description='A wallpaper change tool for IDP learning.')
-    parser.add_argument('--wallpaper', type=str,default=r"wallpaper_new.jpg", help='wallpaper picture path')
+    parser.add_argument('--wallpaper', type=str,default=r"wallpaper_new.png", help='wallpaper picture path')
     args = parser.parse_args()
     setWallPaper(os.path.join(os.getcwd(),args.wallpaper))
     print('already change wallpaper')
