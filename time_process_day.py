@@ -115,8 +115,8 @@ if __name__ == '__main__':
         plt.grid()
         plt.xlim(6, 24)  # x轴坐标范围
         plt.ylim(0, 110)  # y轴坐标范围
-        plt.xlabel('time',fontdict={'weight':'normal','size': 25})  # x轴标注
-        plt.ylabel('energy',fontdict={'weight':'normal','size': 25})  # y轴标注
+        plt.xlabel('time',fontdict={'weight':'normal','size': 26})  # x轴标注
+        plt.ylabel('energy',fontdict={'weight':'normal','size': 26})  # y轴标注
         plt.tick_params(labelsize=18)
         # plt.legend()  # 图例
         plt_savefig(args.output_dir+input_sg + '-energy_trend.png')  # 保存图片
