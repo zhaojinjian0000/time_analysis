@@ -1,9 +1,10 @@
 # 时间分析 for Windows 
-该项目由LotusWang0723/time_analysis修改得，针对适配windows系统，并可以修改桌面壁纸
-[forked from LotusWang0723/time_analysis](https://github.com/LotusWang0723/time_analysis)
-在win10下的桌面截图为(安装便笺后，安装方法和win7安装方法见README最后)
+- 该项目由LotusWang0723/time_analysis修改得，针对适配windows系统，并可以修改桌面壁纸
+- [forked from LotusWang0723/time_analysis](https://github.com/LotusWang0723/time_analysis)
+- [理论指导为原作者文章](https://mp.weixin.qq.com/s/p2VuPg5YvHs6-uBKp04rOg)
+- 在win10下的桌面截图为(安装便笺后，安装方法和win7安装方法见README最后)
 ![image](https://github.com/zhaojinjian0000/time_analysis/blob/master/ptrsc.png)
-[理论指导为原作者文章](https://mp.weixin.qq.com/s/p2VuPg5YvHs6-uBKp04rOg)
+
 
 ## 功能
 - 原始的时间统计功能只保留按天统计
