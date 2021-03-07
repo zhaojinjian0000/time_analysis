@@ -1,16 +1,21 @@
 # 时间分析 for Windows 
-
-forked from LotusWang0723/time_analysis
-https://github.com/LotusWang0723/time_analysis
+该项目由LotusWang0723/time_analysis修改得，针对适配windows系统，并可以修改桌面壁纸
+[forked from LotusWang0723/time_analysis](https://github.com/LotusWang0723/time_analysis)
+在win10下的桌面截图为(安装便笺后，安装方法和win7安装方法见README最后)
+![image](https://github.com/zhaojinjian0000/time_analysis/blob/master/ptrsc.png)
+[理论指导为原作者文章](https://mp.weixin.qq.com/s/p2VuPg5YvHs6-uBKp04rOg)
 
 ## 功能
 - 原始的时间统计功能只保留按天统计
 - 新增了更换为桌面壁纸功能
+- 适配了windows的编码方式，默认为ansi (mac默认是utf-8)
+生成壁纸为
 ![image](https://github.com/zhaojinjian0000/time_analysis/blob/master/wallpaper_new.jpg)
 ## 安装
-- 安装python
+- 安装python并添加到路径
 - 下载该项目并解压，进入到解压文件夹
-- 双击debug.bat，按照提示安装未安装的python包，直到可以正确更换桌面壁纸
+- 双击install.bat，安装python包，（直到无问题，无红字）
+- 双击debug.bat，若无问题则可以正确更换桌面壁纸
 - 在debug.bat运行无误后，双击change_wallpaper.bat即可在后台运行，至此安装完毕
 ---
 ## 入门使用指南
@@ -31,3 +36,5 @@ https://github.com/LotusWang0723/time_analysis
 - 自动更换：[使用windows的任务计划程序](https://blog.csdn.net/weixin_42046939/article/details/103886833)
 开始任务自行设置，可以设置为开机自启/每隔30分钟运行一次
 程序或脚本为change_wallpaper.bat的路径，起始于change_wallpaper.bat所在的文件夹
+- 对于win10，可以[参考该文章使用便笺](https://jingyan.baidu.com/article/a378c960510893f329283004.html)
+- 对于win7，可以[参考该文章使用便笺](https://jingyan.baidu.com/article/4b07be3c8b4d9848b280f35a.html)

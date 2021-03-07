@@ -1,6 +1,5 @@
 import os
 import win32api, win32gui, win32con
-import time
 import argparse
 def setWallPaper(pic):
     # open register
